@@ -3,7 +3,7 @@ name: "workflow tests"
 on: push
 
 jobs:
-  spring-boot-microservices:
+  github-variables-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,4 +24,4 @@ jobs:
         run: echo ::set-output name=key_pub::$(cat mykey.pub)
 
       - name: echo key.pub as github var
-        run: echo ${{ steps.vars.outputs.key_pub }}
+        run: ${{ steps.vars.outputs.key_pub }}
