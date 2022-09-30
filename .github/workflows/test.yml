@@ -1,3 +1,7 @@
+name: "workflow tests"
+
+on: push
+
 jobs:
   spring-boot-microservices:
     runs-on: ubuntu-latest
