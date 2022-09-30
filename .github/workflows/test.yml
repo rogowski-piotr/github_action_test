@@ -15,3 +15,13 @@ jobs:
 
       - name: list key
         run: ls -lhra
+
+      - name: cat key
+        run: cat mykey.pub
+
+      - name: set public key var
+        id: vars
+        run: echo ::set-output name=key_pub::$(cat mykey.pub)
+
+      - name: echo key.pub as github var
+        run: echo ${{ steps.vars.outputs.key_pub }}
