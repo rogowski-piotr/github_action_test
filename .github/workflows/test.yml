@@ -1,0 +1,13 @@
+jobs:
+  spring-boot-microservices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v2
+
+      - name: generate ssh key
+        run: ssh-keygen -t rsa -N "" -f mykey
+
+      - name: list key
+        run: ls -lhra
